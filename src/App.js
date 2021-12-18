@@ -32,7 +32,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <button onClick={this.handleToggleClick}>
-          {this.state.showMessage ? 'Hide' : 'Show'}
+          { this.state.showMessage ? 'Hide' : 'Show' }
         </button>
         { this.state.showMessage && this.state.items.map ( ( item ) => (
           <p key={ item.id }>{ item.name }</p>
