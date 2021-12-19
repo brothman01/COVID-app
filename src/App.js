@@ -27,7 +27,7 @@ class App extends React.Component {
 .then(response => {
     console.log(response);
     this.setState( {
-      items: response,
+      items: response.body,
       DataisLoaded: true
     } );
 })
