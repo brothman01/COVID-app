@@ -17,23 +17,14 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://covid-19-data.p.rapidapi.com/country/code?code=it", {
-    "method": "GET",
-    "headers": {
-        "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
-        "x-rapidapi-key": "af72eff191msh52ab26051a8a2aap11d57bjsn4db4115a61a4"
-    }
-})
-.then(response => {
-    console.log(response);
-    this.setState( {
-      items: response.body,
-      DataisLoaded: true
-    } );
-})
-.catch(err => {
-    console.error(err);
-});
+    fetch( "https://jsonplaceholder.typicode.com/users" )
+      .then( ( res ) => res.json() )
+      .then( ( json ) => {
+        this.setState( {
+          items: json,
+          DataisLoaded: true
+        } );
+      } )
   }
 
   render() {
