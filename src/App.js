@@ -7,32 +7,52 @@ class App extends React.Component {
   constructor( props ) {
     super( props );
     this.state = { showMessage: false };
-    this.handleToggleClick = this.handleToggleClick.bind( this );
+    this.showCovidData = this.showCovidData.bind( this );
   }
 
-  handleToggleClick() {
-    this.setState( state => ( {
-      showMessage: ! state.showMessage
-    } ) );
+  showCovidData() {
+    return (
+      <ul className="covid-data">
+        <li key="lastUpdate">Last Updated: { this.state.lastUpdate }</li>
+        <li key="country">Country: { this.state.country }</li>
+        <li key="confirmed">Confirmed Cases: { this.state.confirmed }</li>
+        <li key="critical">Critical Cases: { this.state.critical }</li>
+        <li key="deaths">Deaths: { this.state.deaths }</li>
+        <li key="recovered">Recovered: { this.state.recovered }</li>
+      </ul>
+    );
   }
 
   componentDidMount() {
-    fetch( "https://jsonplaceholder.typicode.com/users" )
-      .then( ( res ) => res.json() )
-      .then( ( json ) => {
-        this.setState( {
-          items: json,
-          DataisLoaded: true
-        } );
-      } )
+    fetch( "https://www.covid19-api.com/country/code?code=US&format=json", {
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
+        "x-rapidapi-key": process.env.REACT_APP_COVID_API_KEY
+      }
+    } )
+    .then( ( res ) => res.json() )
+    .then( response => {
+      console.log( response[0] );
+      this.setState( {
+        country: response[0].country,
+        confirmed: response[0].confirmed.toLocaleString( "en-US" ),
+        critical: response[0].critical.toLocaleString( "en-US" ),
+        deaths: response[0].deaths.toLocaleString( "en-US" ),
+        recovered: response[0].recovered.toLocaleString( "en-US" ),
+        lastUpdate: response[0].lastUpdate,
+        DataisLoaded: true
+      } );
+    } )
+    .catch( err => {
+      console.error( err );
+    } );
   }
 
   render() {
     return (
       <div className="App">
-        <button onClick={ this.handleToggleClick  }>
-          { this.state.showMessage ? 'Hide' : 'Show' }
-        </button>
+        { this.showCovidData() }
         { this.state.showMessage && this.state.items.map ( ( item ) => (
           <p key={ item.id }>{ item.name }</p>
         ) ) }
