@@ -1,7 +1,10 @@
+// Internal Dependencies
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import ReactDOM from 'react-dom';
+
+// Internal Components
+import ToggleDarkMode from './components/toggle-dark-mode';
 
 class App extends React.Component {
   constructor( props ) {
@@ -29,13 +32,20 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <button onClick={ this.handleToggleClick  }>
+      <div className="App bg-white dark:bg-gray-900 px-6 py-8 ring-1 ring-gray-900/5 shadow-xl">
+
+        <ToggleDarkMode />
+
+        <button className="text-gray-900 dark:text-white mt-5 text-base font-medium tracking-tight" onClick={ this.handleToggleClick  }>
           { this.state.showMessage ? 'Hide' : 'Show' }
         </button>
+
         { this.state.showMessage && this.state.items.map ( ( item ) => (
-          <p key={ item.id }>{ item.name }</p>
+          <p className="text-gray-500 dark:text-gray-400 mt-2 text-sm" key={ item.id }>
+            { item.name }
+          </p>
         ) ) }
+
       </div>
     );
   }

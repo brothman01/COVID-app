@@ -1,7 +1,16 @@
+/* Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Internal Components  */
+@import "./components/toggle-dark-mode/style.css";
+
 .App {
   text-align: center;
   border: solid gray 0.5px;
   padding: 20px 0px;
+  height: 100vh;
 }
 
 .App-logo {
