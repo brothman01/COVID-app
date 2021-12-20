@@ -14,7 +14,7 @@ class App extends React.Component {
 
   showCovidData() {
     return (
-      <ul className="covid-data">
+      <ul className="covid-data text-gray-500 dark:text-gray-400 mt-2 text-sm">
         <li key="lastUpdate">Last Updated: { this.state.lastUpdate }</li>
         <li key="country">Country: { this.state.country }</li>
         <li key="confirmed">Confirmed Cases: { this.state.confirmed }</li>
@@ -54,11 +54,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App bg-white dark:bg-gray-900 px-6 py-8 ring-1 ring-gray-900/5 shadow-xl">
-        
+
         <ToggleDarkMode />
-        
+
         { this.showCovidData() }
-        
+
         { this.state.showMessage && this.state.items.map ( ( item ) => (
           <p className="text-gray-500 dark:text-gray-400 mt-2 text-sm" key={ item.id }>
             { item.name }

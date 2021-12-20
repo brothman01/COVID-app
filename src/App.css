@@ -32,6 +32,7 @@ ul.covid-data {
   text-align: left;
   max-width: 25%;
   margin: 0 auto;
+  margin-top: 2em;
 }
 
 .App-header {
