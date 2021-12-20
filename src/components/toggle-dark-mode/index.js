@@ -3,8 +3,18 @@ import React from 'react';
 class ToggleDarkMode extends React.Component {
   constructor( props ) {
     super( props );
-    this.state = { isDarkMode: false };
+    this.state = {
+      isDarkMode: ( localStorage.theme === 'dark' || ( ! ( 'theme' in localStorage ) && window.matchMedia( '(prefers-color-scheme: dark)' ).matches ) )
+    };
     this.handleToggleClick = this.handleToggleClick.bind( this );
+  }
+
+  componentDidUpdate() {
+    if ( localStorage.theme === 'dark' || ( ! ( 'theme' in localStorage ) && window.matchMedia( '(prefers-color-scheme: dark)' ).matches ) ) {
+      document.documentElement.classList.add( 'dark' );
+    } else {
+      document.documentElement.classList.remove( 'dark' );
+    }
   }
 
   handleToggleClick() {
@@ -12,9 +22,11 @@ class ToggleDarkMode extends React.Component {
       isDarkMode: ! state.isDarkMode
     } ) );
     if ( ! this.state.isDarkMode ) {
+      localStorage.theme = 'dark'
       document.body.classList.add( 'dark' );
     }
     if ( this.state.isDarkMode ) {
+      localStorage.theme = 'light'
       document.body.classList.remove( 'dark' );
     }
   }
