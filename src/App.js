@@ -1,6 +1,5 @@
-// Internal Dependencies
-import logo from './logo.svg';
-import './App.css';
+// Internal Dependenciess
+import './App-tailwind.css';
 import React from 'react';
 
 // Internal Components
