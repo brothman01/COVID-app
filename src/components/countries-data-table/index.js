@@ -6,7 +6,6 @@ import '../../../node_modules/flag-icons/css/flag-icons.min.css'
 class CountriesDataTable extends React.Component {
   constructor( props ) {
     super( props );
-    this.handleFilterClick = this.handleFilterClick.bind( this );
     this.formatColumnNumber = this.formatColumnNumber.bind( this );
     this.state = { countryData: [] };
   }
@@ -29,10 +28,6 @@ class CountriesDataTable extends React.Component {
     } );
   }
 
-  handleFilterClick() {
-    console.log( 'testing' );
-  }
-
   formatColumnNumber( value ) {
     return value?.toLocaleString( "en-US" )
   }
@@ -51,8 +46,6 @@ class CountriesDataTable extends React.Component {
         changed: country.lastChange
       } )
     ) )
-
-    console.log( data );
 
     const columns = [
       { title: "Country", field: "country", render: value => <div><span className={`flag-icon flag-icon-${value.countryAbbrev}`}></span> {value.country}</div> },
