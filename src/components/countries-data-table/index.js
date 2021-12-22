@@ -1,7 +1,7 @@
 import React from 'react';
 import MaterialTable from 'material-table';
 import tableIcons from '../material-table-icons';
-import '../../../node_modules/flag-icons/css/flag-icons.min.css'
+import './css/flag-icons.min.css'
 
 class CountriesDataTable extends React.Component {
   constructor( props ) {

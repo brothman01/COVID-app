@@ -2,3 +2,6 @@ node_modules
 build
 .DS_Store
 .env
+
+src/components/countries-data-table/css
+src/components/countries-data-table/flags
