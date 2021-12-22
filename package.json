@@ -2,6 +2,7 @@
   "name": "covid-react-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://evanherman.github.io/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
@@ -12,12 +13,14 @@
     "web-vitals": "^2.1.2"
   },
   "scripts": {
-    "start": "npm run build:css && react-scripts start",
-    "build": "npm run watch:css && react-scripts build",
+    "start": "react-scripts start",
+    "build": "npm run build:css && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build:css": "npx tailwindcss -i ./src/App.css -o ./src/App-tailwind.css",
-    "watch:css": "npx tailwindcss -i ./src/App.css -o ./src/App-tailwind.css --watch"
+    "watch:css": "npx tailwindcss -i ./src/App.css -o ./src/App-tailwind.css --watch",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
