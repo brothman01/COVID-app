@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "npm run copy-flags && npm run build:css && react-scripts start",
-    "build": "npm run build:css && react-scripts build",
+    "build": "npm run copy-flags && npm run build:css && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build:css": "npx tailwindcss -i ./src/App.css -o ./src/App-tailwind.css",
