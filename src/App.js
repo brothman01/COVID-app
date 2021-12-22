@@ -4,6 +4,7 @@ import React from 'react';
 
 // Internal Components
 import ToggleDarkMode from './components/toggle-dark-mode';
+import CountriesDataTable from './components/countries-data-table';
 
 class App extends React.Component {
   constructor( props ) {
@@ -35,7 +36,6 @@ class App extends React.Component {
     } )
     .then( ( res ) => res.json() )
     .then( response => {
-      console.log( response[0] );
       this.setState( {
         country: response[0].country,
         confirmed: response[0].confirmed.toLocaleString( "en-US" ),
@@ -57,13 +57,19 @@ class App extends React.Component {
 
         <ToggleDarkMode />
 
-        { this.showCovidData() }
+        <div className="grid grid-cols-3 gap-4">
 
-        { this.state.showMessage && this.state.items.map ( ( item ) => (
-          <p className="text-gray-500 dark:text-gray-400 mt-2 text-sm" key={ item.id }>
-            { item.name }
-          </p>
-        ) ) }
+          <div>
+            Something
+          </div>
+
+          { this.showCovidData() }
+
+        </div>
+
+        <div className="grid grid-cols-1 mt-5">
+          <CountriesDataTable />
+        </div>
 
       </div>
     );

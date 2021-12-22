@@ -9,7 +9,7 @@
 .App {
   text-align: center;
   border: solid gray 0.5px;
-  padding: 20px 0px;
+  padding: 2em;
   height: 100vh;
 }
 
@@ -22,17 +22,6 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.btn.hide {
-  display: none;
-}
-
-ul.covid-data {
-  text-align: left;
-  max-width: 25%;
-  margin: 0 auto;
-  margin-top: 2em;
 }
 
 .App-header {
