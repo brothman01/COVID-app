@@ -11,22 +11,22 @@ class WorldTotals extends React.Component {
       <div className="grid grid-cols-4 gap-4">
         <div className="text-center py-24">
           <h2 className="text-4xl font-semibold">Confirmed</h2>
-          <img src="/images/confirmed.svg" alt="Confirmed Icon" className="py-4" />
+          <img src="images/confirmed.svg" alt="Confirmed Icon" className="py-4" />
           <span className="text-2xl">{ confirmedTotal }</span>
         </div>
         <div className="text-center py-24">
           <h2 className="text-4xl font-semibold">Recovered</h2>
-          <img src="/images/recovered.svg" alt="Recovered Icon" className="py-4" />
+          <img src="images/recovered.svg" alt="Recovered Icon" className="py-4" />
           <span className="text-2xl">{ recoveredTotal }</span>
         </div>
         <div className="text-center py-24">
           <h2 className="text-4xl font-semibold">Critical</h2>
-          <img src="/images/critical.svg" alt="Critical Icon" className="py-4" />
+          <img src="images/critical.svg" alt="Critical Icon" className="py-4" />
           <span className="text-2xl">{ criticalTotal }</span>
         </div>
         <div className="text-center py-24">
           <h2 className="text-4xl font-semibold">Deaths</h2>
-          <img src="/images/deaths.svg" alt="Deaths Icon" className="py-4" />
+          <img src="images/deaths.svg" alt="Deaths Icon" className="py-4" />
           <span className="text-2xl">{ deathsTotal }</span><br />
           <span className="text-sm italic">({ deathPercent })</span>
         </div>
