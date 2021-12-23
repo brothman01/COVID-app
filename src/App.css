@@ -1,3 +1,8 @@
 #user-country-flag .flag-icon {
   right: 5px;
 }
+
+#world-totals img {
+  max-width: 50px;
+  margin: 0 auto;
+}
