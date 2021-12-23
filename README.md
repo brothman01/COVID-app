@@ -1,5 +1,6 @@
 # COVID App
-### Just an app to get official COVID data for a given country.
+
+A REACT application to display official COVID data.
 
 ## THIS APP IS UNDER CONSTRUCTION
 
