@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './style.css'
+
 class ToggleDarkMode extends React.Component {
   constructor( props ) {
     super( props );

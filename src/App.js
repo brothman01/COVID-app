@@ -1,5 +1,4 @@
 // Internal Dependenciess
-import './App-tailwind.css';
 import React from 'react';
 
 // Internal Components
