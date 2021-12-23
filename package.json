@@ -16,12 +16,10 @@
     "web-vitals": "^2.1.2"
   },
   "scripts": {
-    "start": "npm run copy-flags && npm run build:css && react-scripts start",
-    "build": "npm run copy-flags && npm run build:css && react-scripts build",
+    "start": "npm run copy-flags && react-scripts start",
+    "build": "npm run copy-flags && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:css": "npx tailwindcss -i ./src/App.css -o ./src/App-tailwind.css",
-    "watch:css": "npx tailwindcss -i ./src/App.css -o ./src/App-tailwind.css --watch",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "copy-flags": "cp -r ./node_modules/flag-icons/css ./src/components/countries-data-table/ && cp -r ./node_modules/flag-icons/flags ./src/components/countries-data-table/"

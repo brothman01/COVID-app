@@ -10,7 +10,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>COVID-19 Stat Tracker</title>
+    <title>COVID-19 Data Tracker</title>
 
     <meta charset="UTF-8" />
 
@@ -38,7 +38,7 @@
     <script language="javascript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>COVID-19 Stat Tracker</title>
+    <title>COVID-19 Data Tracker</title>
     <!-- Define your gradient here - use online tools to find a gradient matching your branding-->
     <style>
       .gradient {
@@ -123,7 +123,7 @@
         </g>
       </svg>
     </div>
-    <section class="bg-white border-b py-8">
+    <section class="bg-white py-8">
       <div class="container max-w-5xl mx-auto m-8">
         <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
           Live Data
@@ -135,6 +135,11 @@
         <div class="container mx-auto px-4 mb-24">
 
           <div id="country-data-table"></div>
+
+          <p class="italic text-gray-500 text-center text-sm py-10">
+            Information provided by RapidAPI's top COVID-19 Data API:<br />
+            <a href="https://rapidapi.com/Gramzivi/api/covid-19-data" target="_blank" class="text-blue-700">COVID-19 Data API</a>
+          </p>
 
         </div>
 
