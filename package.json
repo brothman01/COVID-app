@@ -2,7 +2,7 @@
   "name": "covid-react-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://brothman01.github.io/",
+  "homepage": "https://brothman01.github.io/COVID-app/",
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "@material-ui/icons": "^4.11.2",
