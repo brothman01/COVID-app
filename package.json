@@ -16,6 +16,7 @@
     "web-vitals": "^2.1.2"
   },
   "scripts": {
+    "prepare": "husky install .dev/husky",
     "start": "npm run copy-flags && react-scripts start",
     "build": "npm run copy-flags && react-scripts build",
     "test": "react-scripts test",
