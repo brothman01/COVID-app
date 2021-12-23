@@ -9,7 +9,6 @@ fetch( "https://ipapi.co/json/", {
 } )
 .then( ( res ) => res.json() )
 .then( response => {
-  console.log( response );
   ReactDOM.render(
     <span>
       <li className={`flag-icon flag-icon-${response.country_code?.toLowerCase()}`}></li>
