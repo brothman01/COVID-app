@@ -5,22 +5,25 @@ import { getGeo } from 'geoplugin';
 
 import './App.css';
 
-getGeo()
-  .then( ( response ) => {
-    ReactDOM.render(
-      <span>
-        <li className={`flag-icon flag-icon-${response.countryCode?.toLowerCase()}`}></li>
-        {response.countryName}
-      </span>,
-      document.getElementById( 'user-country-flag' )
-    );
+fetch( "https://ipapi.co/json/", {
+  "method": "GET"
+} )
+.then( ( res ) => res.json() )
+.then( response => {
+  console.log( response );
+  ReactDOM.render(
+    <span>
+      <li className={`flag-icon flag-icon-${response.country_code?.toLowerCase()}`}></li>
+      {response.country_name}
+    </span>,
+    document.getElementById( 'user-country-flag' )
+  );
 
-    ReactDOM.render(
-      <CountriesDataTable />,
-      document.getElementById( 'country-data-table' )
-    );
-  } )
-  .catch( ( error ) => {
-    console.error( error );
-  } )
-  .then( () => {} ); // always executed
+  ReactDOM.render(
+    <CountriesDataTable />,
+    document.getElementById( 'country-data-table' )
+  );
+} )
+.catch( error => {
+  console.error( error );
+} );
