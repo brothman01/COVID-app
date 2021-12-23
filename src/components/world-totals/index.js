@@ -10,6 +10,7 @@ class WorldTotals extends React.Component {
     let recoveredTotal = this.props.covidData.reduce( ( n, { recovered } ) => n + recovered, 0 ).toLocaleString( "en-US" );
     let criticalTotal = this.props.covidData.reduce( ( n, { critical } ) => n + critical, 0 ).toLocaleString( "en-US" );
     let deathsTotal = this.props.covidData.reduce( ( n, { deaths } ) => n + deaths, 0 ).toLocaleString( "en-US" );
+    let deathPercent = parseFloat((this.props.covidData.reduce( ( n, { deaths } ) => n + deaths, 0 )/this.props.covidData.reduce( ( n, { confirmed } ) => n + confirmed, 0 ))*100).toFixed(2)+"%";
     return (
       <div className="grid grid-cols-4 gap-4">
         <div className="text-center py-24">
@@ -30,7 +31,8 @@ class WorldTotals extends React.Component {
         <div className="text-center py-24">
           <h2 className="text-4xl font-semibold">Deaths</h2>
           <img src="/images/deaths.svg" className="py-4" />
-          <span className="text-2xl">{ deathsTotal }</span>
+          <span className="text-2xl">{ deathsTotal }</span><br />
+          <span className="text-sm italic">({ deathPercent })</span>
         </div>
       </div>
     );
