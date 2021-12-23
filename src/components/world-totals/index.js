@@ -1,10 +1,6 @@
 import React from 'react';
 
 class WorldTotals extends React.Component {
-  constructor( props ) {
-    super( props );
-  }
-
   render() {
     let confirmedTotal = this.props.covidData.reduce( ( n, { confirmed } ) => n + confirmed, 0 ).toLocaleString( "en-US" );
     let recoveredTotal = this.props.covidData.reduce( ( n, { recovered } ) => n + recovered, 0 ).toLocaleString( "en-US" );
@@ -37,7 +33,6 @@ class WorldTotals extends React.Component {
       </div>
     );
   }
-
 }
 
 export default WorldTotals;
