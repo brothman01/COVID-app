@@ -11,7 +11,7 @@ class WorldTotals extends React.Component {
       <div className="grid grid-cols-4 gap-4">
         <div className="text-center py-24">
           <h2 className="text-4xl font-semibold">Confirmed</h2>
-          <img src="images/confirmed.svg" alt="Confirmed Icon" className="py-4" />
+          <img src="images/confirmed.svg" className="py-4" />
           <span className="text-2xl">{ confirmedTotal }</span>
         </div>
         <div className="text-center py-24">
