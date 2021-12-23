@@ -1,0 +1,13 @@
+name: eslint
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
+
+      - name: Install node packages 🔧
+        run: npm ci
+
+      - name: Run eslint 🕒
+        run: npx eslint src/**/*.js
