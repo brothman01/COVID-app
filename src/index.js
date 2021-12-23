@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import CountriesDataTable from './components/countries-data-table';
-import { getGeo } from 'geoplugin';
 
 import './App.css';
 
