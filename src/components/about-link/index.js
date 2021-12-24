@@ -14,7 +14,7 @@ const AboutLink = () => {
 
   return (
     <div>
-      <a href="#" onClick={onOpenModal}>About</a>
+      <button onClick={onOpenModal}>About</button>
       <Modal open={open} onClose={onCloseModal} center aria-labelledby="About" aria-describedby="About the COVID-19 stat tracker.">
         <h2 className="font-bold text-gray-800 text-4xl text-center py-4">About COVID-19 Data Tracker</h2>
         <p className="text-gray-800 py-4">
