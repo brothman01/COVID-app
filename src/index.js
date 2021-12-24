@@ -76,7 +76,7 @@ fetch( "https://www.covid19-api.com/country/all?format=json", {
         data={getData( covidData )}
         options={{
           title: 'Top 5 Countries with Most COVID-19 Cases',
-          chartArea: { width: '100%' },
+          chartArea: { width: '60%' },
           hAxis: {
             title: 'Country',
             minValue: 0,
