@@ -57,11 +57,6 @@ class App extends React.Component {
         <ToggleDarkMode />
 
         <div className="grid grid-cols-3 gap-4">
-
-          <div>
-            Something
-          </div>
-
           { this.showCovidData() }
 
         </div>
