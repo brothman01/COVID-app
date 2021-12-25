@@ -62,6 +62,7 @@ class App extends React.Component {
         </div>
 
         <div className="grid grid-cols-1 mt-5">
+          <h1>foobar</h1>
           <CountriesDataTable />
         </div>
 
