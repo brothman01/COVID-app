@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import CountriesDataTable from './components/countries-data-table';
 import WorldTotals from './components/world-totals';
+import Selected from './components/selected';
 
 import './App.css';
 
@@ -26,6 +27,11 @@ fetch( "https://www.covid19-api.com/country/all?format=json", {
         {geoLocationData.country_name}
       </span>,
       document.getElementById( 'user-country-flag' )
+    );
+
+    ReactDOM.render(
+      <Selected location={geoLocationData} />,
+      document.getElementById( 'selected-span' )
     );
 
     ReactDOM.render(
