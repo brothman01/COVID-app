@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import CountriesDataTable from './components/countries-data-table';
 import WorldTotals from './components/world-totals';
-import Selected from './components/selected';
+import LiveDataHeading from './components/LiveDataHeading';
 
 import './App.css';
 
@@ -30,7 +30,7 @@ fetch( "https://www.covid19-api.com/country/all?format=json", {
     );
 
     ReactDOM.render(
-      <Selected location={geoLocationData} />,
+      <LiveDataHeading location={geoLocationData} />,
       document.getElementById( 'selected-span' )
     );
 

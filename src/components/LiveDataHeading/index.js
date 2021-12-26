@@ -1,11 +1,6 @@
 import React from 'react';
 
-class Selected extends React.Component {
-  constructor( props ) {
-    super( props );
-
-  }
-
+class LiveDataHeading extends React.Component {
   render() {
     return (
       <h1>Live Data ({this.props.location.country_code})</h1>
@@ -13,4 +8,4 @@ class Selected extends React.Component {
   }
 }
 
-export default Selected;
+export default LiveDataHeading;
