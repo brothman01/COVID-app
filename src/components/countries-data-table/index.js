@@ -48,7 +48,7 @@ class CountriesDataTable extends React.Component {
     ) )
 
     const columns = [
-      { title: "Country", field: "country", render: value => <div><span className={`flag-icon flag-icon-${value.countryAbbrev}`}></span> {value.country}</div> },
+      { title: "Country", field: "country", render: value => <div onClick={() => console.log(value.country + ' selected')}><span className={`flag-icon flag-icon-${value.countryAbbrev}`}></span> {value.country}</div> },
       { title: "Confirmed", field: "confirmed", type: "numeric", render: value => this.formatColumnNumber( value.confirmed ) },
       { title: "Recovered", field: "recovered", type: "numeric", render: value => this.formatColumnNumber( value.recovered ) },
       { title: "Critical", field: "critical", type: "numeric", render: value => this.formatColumnNumber( value.critical ) },

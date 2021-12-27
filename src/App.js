@@ -57,16 +57,12 @@ class App extends React.Component {
         <ToggleDarkMode />
 
         <div className="grid grid-cols-3 gap-4">
-
-          <div>
-            Something
-          </div>
-
           { this.showCovidData() }
 
         </div>
 
         <div className="grid grid-cols-1 mt-5">
+          <h1>foobar</h1>
           <CountriesDataTable />
         </div>
 
