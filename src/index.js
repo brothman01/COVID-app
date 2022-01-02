@@ -1,12 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CountriesDataTable from './components/countries-data-table';
-import WorldTotals from './components/world-totals';
-import LiveDataHeading from './components/LiveDataHeading';
+import App from './App';
 
-import './App.css';
-
-// Get all COVID-19 data
+// Retreive all COVID-19 data
 fetch( "https://www.covid19-api.com/country/all?format=json", {
   "method": "GET",
   "headers": {
@@ -22,32 +18,8 @@ fetch( "https://www.covid19-api.com/country/all?format=json", {
   .then( ( geoLocationData ) => geoLocationData.json() )
   .then( geoLocationData => {
     ReactDOM.render(
-      <span>
-        <span className={`flag-icon flag-icon-${geoLocationData.country_code?.toLowerCase()}`}></span>
-        {geoLocationData.country_name}
-      </span>,
-      document.getElementById( 'user-country-flag' )
+      <App covidData={covidData} geoLocationData={geoLocationData} />,
+     document.getElementById( "root" )
     );
-
-    ReactDOM.render(
-      <LiveDataHeading location={geoLocationData} />,
-      document.getElementById( 'selected-span' )
-    );
-
-    ReactDOM.render(
-      <WorldTotals covidData={covidData} />,
-      document.getElementById( 'world-totals' )
-    );
-
-    ReactDOM.render(
-      <CountriesDataTable />,
-      document.getElementById( 'country-data-table' )
-    );
-  } )
-  .catch( error => {
-    console.error( error );
   } );
-} )
-.catch( err => {
-  console.error( err );
 } );

@@ -1,74 +1,71 @@
 // Internal Dependenciess
 import React from 'react';
+import {
+  Routes,
+  Route
+} from "react-router-dom";
 
 // Internal Components
-import ToggleDarkMode from './components/toggle-dark-mode';
-import CountriesDataTable from './components/countries-data-table';
+import MainNav from './components/main-nav';
+import Hero from './components/hero';
+import LiveData from './components/live-data';
+import Footer from './components/footer';
+
+import _ from 'lodash';
+
+// Styles
+import './App.css';
 
 class App extends React.Component {
   constructor( props ) {
     super( props );
-    this.state = { showMessage: false };
-    this.showCovidData = this.showCovidData.bind( this );
+    this.state = {
+      geoLocationData: this.props.geoLocationData,
+      covidData: this.props.covidData,
+      selectedCountry: this.props.covidData[ 242 ], // USA
+    };
+    this.updateSelectedCountry = this.updateSelectedCountry.bind( this );
   }
 
-  showCovidData() {
-    return (
-      <ul className="covid-data text-gray-500 dark:text-gray-400 mt-2 text-sm">
-        <li key="lastUpdate">Last Updated: { this.state.lastUpdate }</li>
-        <li key="country">Country: { this.state.country }</li>
-        <li key="confirmed">Confirmed Cases: { this.state.confirmed }</li>
-        <li key="critical">Critical Cases: { this.state.critical }</li>
-        <li key="deaths">Deaths: { this.state.deaths }</li>
-        <li key="recovered">Recovered: { this.state.recovered }</li>
-      </ul>
-    );
-  }
-
-  componentDidMount() {
-    fetch( "https://www.covid19-api.com/country/code?code=US&format=json", {
-      "method": "GET",
-      "headers": {
-        "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
-        "x-rapidapi-key": process.env.REACT_APP_COVID_API_KEY
-      }
-    } )
-    .then( ( res ) => res.json() )
-    .then( response => {
-      this.setState( {
-        country: response[0].country,
-        confirmed: response[0].confirmed.toLocaleString( "en-US" ),
-        critical: response[0].critical.toLocaleString( "en-US" ),
-        deaths: response[0].deaths.toLocaleString( "en-US" ),
-        recovered: response[0].recovered.toLocaleString( "en-US" ),
-        lastUpdate: response[0].lastUpdate,
-        DataisLoaded: true
-      } );
-    } )
-    .catch( err => {
-      console.error( err );
-    } );
+  updateSelectedCountry = ( selectedCountry ) => {
+    let index = _.findIndex( this.state.covidData, { 'country': selectedCountry } );
+    if ( -1 === index ) {
+      index = _.findIndex( this.state.covidData, { 'country': 'USA' } );
+    }
+    this.setState({ selectedCountry: this.state.covidData[ index ] });
   }
 
   render() {
     return (
-      <div className="App bg-white dark:bg-gray-900 px-6 py-8 ring-1 ring-gray-900/5 shadow-xl">
-
-        <ToggleDarkMode />
-
-        <div className="grid grid-cols-3 gap-4">
-          { this.showCovidData() }
-
-        </div>
-
-        <div className="grid grid-cols-1 mt-5">
-          <h1>foobar</h1>
-          <CountriesDataTable />
-        </div>
-
-      </div>
+      <Home
+        covidData={this.state.covidData}
+        geoLocationData={this.state.geoLocationData}
+        selectedCountry={this.state.selectedCountry}
+        updateSelectedCountry={this.updateSelectedCountry}
+      />
     );
   }
 }
 
 export default App;
+
+/**
+ * Home Component
+ */
+class Home extends React.Component {
+  render() {
+    return (
+      <>
+        <MainNav geoLocationData={this.props.geoLocationData} />
+        <Hero />
+        <LiveData
+          covidData={this.props.covidData}
+          geoLocationData={this.props.geoLocationData}
+          selectedCountry={this.props.selectedCountry}
+          updateSelectedCountry={this.props.updateSelectedCountry}
+        />
+        <Footer />
+      </>
+    );
+  }
+}
