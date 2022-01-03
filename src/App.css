@@ -15,6 +15,12 @@ html {
   margin: 0 auto;
 }
 
+button.show-world-data {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 2em;
+}
+
 td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-root:first-child:hover {
   cursor: pointer;
 }
