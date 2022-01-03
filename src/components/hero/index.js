@@ -1,5 +1,7 @@
 import React from 'react';
 
+import heroImage from '../../images/hero.png';
+
 class Header extends React.Component {
   render() {
     return(
@@ -18,7 +20,7 @@ class Header extends React.Component {
             </div>
 
             <div className="w-full md:w-3/5 py-20 text-center">
-              <img className="w-full md:w-4/5 z-50" src="images/hero.png" alt="COVID-19 Data Tracker Hero" />
+              <img className="w-full md:w-4/5 z-50" src={heroImage} alt="COVID-19 Data Tracker Hero" />
             </div>
 
           </div>

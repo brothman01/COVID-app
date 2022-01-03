@@ -1,5 +1,7 @@
 import React from 'react';
 
+import logo192 from '../../images/logo192.png';
+
 class Footer extends React.Component {
   render() {
     return (
@@ -31,7 +33,7 @@ class Footer extends React.Component {
             <div className="w-full flex flex-col md:flex-row py-6 grid grid-cols-3 gap-4">
               <div className="flex-2 mb-6 text-black col-span-2">
                 <span className="text-pink-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl">
-                  <img className="h-8 inline" alt="COVID-19 Logo" src="images/logo192.png" /> COVID-19 Data Tracker
+                  <img className="h-8 inline" alt="COVID-19 Logo" src={logo192} /> COVID-19 Data Tracker
                 </span>
               </div>
               <div className="flex-1">

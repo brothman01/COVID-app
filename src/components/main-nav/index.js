@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
-import 'flag-icons/css/flag-icons.min.css'
+import 'flag-icons/css/flag-icons.min.css';
+
+import logo192 from '../../images/logo192.png';
 
 class MainNav extends React.Component {
   render() {
@@ -9,7 +11,7 @@ class MainNav extends React.Component {
         <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
           <div className="pl-4 flex items-center">
             <span className="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl">
-              <img className="h-8 inline" src="images/logo192.png" alt="COVID-19 Logo" /> COVID-19 Data Tracker
+              <img className="h-8 inline" src={logo192} alt="COVID-19 Logo" /> COVID-19 Data Tracker
             </span>
           </div>
           <div className="block lg:hidden pr-4">
