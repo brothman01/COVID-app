@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 #header .flag-icon {
   right: 5px;
 }
@@ -9,4 +13,8 @@
 #world-totals img {
   max-width: 50px;
   margin: 0 auto;
+}
+
+td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-root:first-child:hover {
+  cursor: pointer;
 }

@@ -1,9 +1,5 @@
 // Internal Dependenciess
 import React from 'react';
-import {
-  Routes,
-  Route
-} from "react-router-dom";
 
 // Internal Components
 import MainNav from './components/main-nav';
@@ -22,7 +18,7 @@ class App extends React.Component {
     this.state = {
       geoLocationData: this.props.geoLocationData,
       covidData: this.props.covidData,
-      selectedCountry: this.props.covidData[ 242 ], // USA
+      selectedCountry: false, // USA
     };
     this.updateSelectedCountry = this.updateSelectedCountry.bind( this );
   }
@@ -33,6 +29,9 @@ class App extends React.Component {
       index = _.findIndex( this.state.covidData, { 'country': 'USA' } );
     }
     this.setState({ selectedCountry: this.state.covidData[ index ] });
+
+    const divElement = document.getElementById( 'live-data-header' );
+    divElement.scrollIntoView({ top: -2000, behavior: 'smooth' });
   }
 
   render() {
