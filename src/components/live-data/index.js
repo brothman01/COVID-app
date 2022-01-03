@@ -34,7 +34,7 @@ class LiveData extends React.Component {
     return (
       <section className="bg-white py-8">
         <div className="container max-w-5xl mx-auto m-8">
-          <LiveDataHeading geoLocationData={this.props.geoLocationData} selectedCountry={this.props.selectedCountry} />
+          <LiveDataHeading geoLocationData={this.props.geoLocationData} selectedCountry={this.props.selectedCountry} updateSelectedCountry={this.props.updateSelectedCountry} />
 
           <div className="w-full mb-4">
             <div className="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>

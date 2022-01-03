@@ -24,11 +24,21 @@ class App extends React.Component {
   }
 
   updateSelectedCountry = ( selectedCountry ) => {
+    if ( ! selectedCountry  ) {
+      this.setState({ selectedCountry: false });
+      return;
+    }
+
     let index = _.findIndex( this.state.covidData, { 'country': selectedCountry } );
     if ( -1 === index ) {
       index = _.findIndex( this.state.covidData, { 'country': 'USA' } );
     }
-    this.setState({ selectedCountry: this.state.covidData[ index ] });
+
+    if (this.state.selectedCountry.hasOwnProperty( 'country' ) && selectedCountry === this.state.selectedCountry.country) {
+      this.setState({ selectedCountry: false });
+    } else {
+      this.setState({ selectedCountry: (selectedCountry === this.state.selectedCountry) ? false : this.state.covidData[ index ] });
+    }
 
     const divElement = document.getElementById( 'live-data-header' );
     divElement.scrollIntoView({ top: -2000, behavior: 'smooth' });
