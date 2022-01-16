@@ -36,23 +36,6 @@ class Footer extends React.Component {
                   <img className="h-8 inline" alt="COVID-19 Logo" src={logo192} /> COVID-19 Data Tracker
                 </span>
               </div>
-              <div className="flex-1">
-                <p className="uppercase text-gray-500 md:mb-6">Links</p>
-                <ul className="list-reset mb-6">
-                  <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                    <a href="https://www.github.com/EvanHerman" target="_blank" rel="noreferrer" className="no-underline hover:underline text-gray-800 hover:text-pink-500">@EvanHerman on Github</a>
-                  </li>
-                  <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                    <a href="https://www.evan-herman.com" target="_blank" rel="noreferrer" className="no-underline hover:underline text-gray-800 hover:text-pink-500">Evan Herman</a>
-                  </li>
-                  <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                    <a href="https://www.codeparrots.com" target="_blank" rel="noreferrer" className="no-underline hover:underline text-gray-800 hover:text-pink-500">Code Parrots</a>
-                  </li>
-                  <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                    <a href="https://www.wpicons.com" target="_blank" rel="noreferrer" className="no-underline hover:underline text-gray-800 hover:text-pink-500">WPIcons</a>
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
         </footer>
